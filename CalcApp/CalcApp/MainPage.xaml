@@ -4,24 +4,25 @@
 			 x:Class="CalcApp.MainPage">
 
 	<Grid>
-        <!--  -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="192" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
 
-        <BoxView Grid.Row="0" Color="CornflowerBlue" />
-        <Label HorizontalTextAlignment="End" 
-               VerticalTextAlignment="Center" Grid.Row="0"
-               FontSize="48" Text="Výsledek"/>
+		<!-- Result -->
+		<BoxView Grid.Row="0" Color="CornflowerBlue" />
+		<Label HorizontalTextAlignment="End" 
+			   VerticalTextAlignment="Center" Grid.Row="0"
+			   FontSize="48" Text="Výsledek" Margin="16"/>
 
-        <BoxView Grid.Row="1" Color="MediumVioletRed" />
-        <Grid Grid.Row="1">
+		<!-- Keypad -->
+		<BoxView Grid.Row="1" Color="WhiteSmoke" />
+		<Grid Grid.Row="1">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*" />
 				<RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
 
 			<Grid.ColumnDefinitions>
@@ -31,94 +32,123 @@
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
 
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center"
-                   Grid.Column="0" Grid.Row="0"
-                   FontSize="32" Text="asd"/>
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center"
-                   Grid.Column="1" Grid.Row="0"
-                   FontSize="32" Text="asd"/>
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center"
-                   Grid.Column="2" Grid.Row="0"
-                   FontSize="32" Text="asd"/>
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="3" Grid.Row="0"
-                   FontSize="32" Text="asd"/>
+			<!-- 1st row -->
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="0" Grid.Row="0"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="7"
+					x:Name="keypad7"/>
 
-            
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="0" Grid.Row="1"
-                   FontSize="32" Text="1"/>
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="1" Grid.Row="1" 
-                   FontSize="32" Text="2"/>
-            
-            <Label HorizontalTextAlignment="Center"  
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="2" Grid.Row="1"
-                   FontSize="32" Text="3"/>
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="3" Grid.Row="1"
-                   FontSize="32" Text="asd"/>
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="1" Grid.Row="0"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="8"
+					x:Name="keypad8"/>
 
-            
-            
-            <Label HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="0" Grid.Row="2"
-                   FontSize="32" Text="4"/>
-            
-            <Label HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="1" Grid.Row="2"
-                   FontSize="32" Text="5"/>
-            
-            <Label HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="2" Grid.Row="2"
-                   FontSize="32" Text="6"/>
-            
-            <Label HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="3" Grid.Row="2"
-                   FontSize="32" Text="asd"/>
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="2" Grid.Row="0"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="9"
+					x:Name="keypad9"/>
 
-            
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="0" Grid.Row="3"
-                   FontSize="32" Text="7"/>
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="1" Grid.Row="3"
-                   FontSize="32" Text="8"/>
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="2" Grid.Row="3"
-                   FontSize="32" Text="9"/>
-            
-            <Label HorizontalTextAlignment="Center" 
-                   VerticalTextAlignment="Center" 
-                   Grid.Column="3" Grid.Row="3"
-                   FontSize="32" Text="asd"/>
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="3" Grid.Row="0"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="÷"
+					x:Name="keypadDivision"/>
 
-        </Grid>
-    </Grid>
+			<!-- 2nd row -->
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="0" Grid.Row="1"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="4"
+					x:Name="keypad4"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="1" Grid.Row="1"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="5"
+					x:Name="keypad5"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="2" Grid.Row="1"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="6"
+					x:Name="keypad6"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="3" Grid.Row="1"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="×"
+					x:Name="keypadMultiplication"/>
+
+			<!-- 3rd row -->
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="0" Grid.Row="2"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="1"
+					x:Name="keypad1"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="1" Grid.Row="2"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="2"
+					x:Name="keypad2"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="2" Grid.Row="2"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="3"
+					x:Name="keypad3"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="3" Grid.Row="2"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="−"
+					x:Name="keypadSubtraction"/>
+
+			<!-- 4th row -->
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="0" Grid.Row="3"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="."
+					x:Name="keypadDecimal"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="1" Grid.Row="3"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="0"
+					x:Name="keypad0"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="2" Grid.Row="3"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="="
+					x:Name="keypadEquals"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="3" Grid.Row="3"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="+"
+					x:Name="keypadAddition"/>
+
+		</Grid>
+	</Grid>
 
 </ContentPage>
