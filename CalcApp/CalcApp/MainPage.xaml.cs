@@ -21,9 +21,12 @@ namespace CalcApp
 
 		public void AddChar(char ch)
 		{
-			buffer += ch;
+            if (buffer.Length < 28)
+            {
+				buffer += ch;
 
-			UpdateDisplay(buffer);
+				UpdateDisplay(buffer);
+			}
 		}
 
 		public void RemoveLastChar()
@@ -62,7 +65,7 @@ namespace CalcApp
 			catch (Exception e)
 			{
 				buffer = "";
-				UpdateDisplay(e.Message);
+				UpdateDisplay("Chyba");
 			}
 		}
 
@@ -71,9 +74,9 @@ namespace CalcApp
 			result.Text = text.Replace('+', '+')
 							  .Replace('-', '−')
 							  .Replace('*', '×')
-							  .Replace('/', '÷')
-							  .Replace('^', '^')
-							  .Replace('√', '√');
+							  .Replace('/', '÷');
+							  //.Replace('^', '^')
+							  //.Replace('√', '√');
 		}
 
 		#region handlers
@@ -97,8 +100,8 @@ namespace CalcApp
 		private void keypadSubtraction_Clicked(object sender, EventArgs e)	  { AddChar('-'); }
 		private void keypadMultiplication_Clicked(object sender, EventArgs e) { AddChar('*'); }
 		private void keypadDivision_Clicked(object sender, EventArgs e)		  { AddChar('/'); }
-		private void keypadPower_Clicked(object sender, EventArgs e)		  { AddChar('^'); }
-		private void keypadRoot_Clicked(object sender, EventArgs e)			  { AddChar('√'); }
+		private void keypadPower_Clicked(object sender, EventArgs e)		  { DisplayAlert("Mocnina",   "Tohle zatím neumíme :(", "Tak jo"); }
+		private void keypadRoot_Clicked(object sender, EventArgs e)			  { DisplayAlert("Odmocnina", "Tohle zatím neumíme :(", "Tak jo"); }
 
 		/* Actions */
 		private void keypadClear_Clicked(object sender, EventArgs e)  { ClearBuffer(); }
