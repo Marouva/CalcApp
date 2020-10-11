@@ -13,7 +13,7 @@
 		<BoxView Grid.Row="0" Color="CornflowerBlue" />
 		<Label HorizontalTextAlignment="End" 
 			   VerticalTextAlignment="Center" Grid.Row="0"
-			   FontSize="48" Text="Výsledek" Margin="16"
+			   FontSize="48" Text="" Margin="16"
                x:Name="result"/>
 
 		<!-- Keypad -->
