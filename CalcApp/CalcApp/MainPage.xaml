@@ -13,12 +13,14 @@
 		<BoxView Grid.Row="0" Color="CornflowerBlue" />
 		<Label HorizontalTextAlignment="End" 
 			   VerticalTextAlignment="Center" Grid.Row="0"
-			   FontSize="48" Text="Výsledek" Margin="16"/>
+			   FontSize="48" Text="Výsledek" Margin="16"
+               x:Name="result"/>
 
 		<!-- Keypad -->
 		<BoxView Grid.Row="1" Color="WhiteSmoke" />
 		<Grid Grid.Row="1">
 			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
 				<RowDefinition Height="*" />
 				<RowDefinition Height="*" />
 				<RowDefinition Height="*" />
@@ -32,121 +34,150 @@
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
 
-			<!-- 1st row -->
-			<Button HorizontalOptions="Center" VerticalOptions="Center"
+            <!-- 1st row -->
+            <Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="0" Grid.Row="0"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="7"
-					x:Name="keypad7"/>
+					FontSize="32" Text="^"
+					x:Name="keypadPower" Clicked="keypadPower_Clicked"/>
 
-			<Button HorizontalOptions="Center" VerticalOptions="Center"
+            <Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="1" Grid.Row="0"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="8"
-					x:Name="keypad8"/>
+					FontSize="32" Text="√"
+					x:Name="keypadRoot" Clicked="keypadRoot_Clicked"/>
 
-			<Button HorizontalOptions="Center" VerticalOptions="Center"
+            <Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="2" Grid.Row="0"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="9"
-					x:Name="keypad9"/>
+					FontSize="32" Text="C"
+					x:Name="keypadClear" Clicked="keypadClear_Clicked"/>
 
-			<Button HorizontalOptions="Center" VerticalOptions="Center"
+            <Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="3" Grid.Row="0"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="÷"
-					x:Name="keypadDivision"/>
-
-			<!-- 2nd row -->
+					FontSize="32" Text="⌫"
+					x:Name="keypadErase" Clicked="keypadErase_Clicked"/>
+            
+            <!-- 2st row -->
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="0" Grid.Row="1"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="4"
-					x:Name="keypad4"/>
+					FontSize="32" Text="7"
+					x:Name="keypad7" Clicked="keypad7_Clicked"/>
 
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="1" Grid.Row="1"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="5"
-					x:Name="keypad5"/>
+					FontSize="32" Text="8"
+					x:Name="keypad8" Clicked="keypad8_Clicked"/>
 
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="2" Grid.Row="1"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="6"
-					x:Name="keypad6"/>
+					FontSize="32" Text="9"
+					x:Name="keypad9" Clicked="keypad9_Clicked"/>
 
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="3" Grid.Row="1"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="×"
-					x:Name="keypadMultiplication"/>
+					FontSize="32" Text="÷"
+					x:Name="keypadDivision" Clicked="keypadDivision_Clicked"/>
 
-			<!-- 3rd row -->
+			<!-- 3nd row -->
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="0" Grid.Row="2"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="1"
-					x:Name="keypad1"/>
+					FontSize="32" Text="4"
+					x:Name="keypad4" Clicked="keypad4_Clicked"/>
 
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="1" Grid.Row="2"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="2"
-					x:Name="keypad2"/>
+					FontSize="32" Text="5"
+					x:Name="keypad5" Clicked="keypad5_Clicked"/>
 
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="2" Grid.Row="2"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="3"
-					x:Name="keypad3"/>
+					FontSize="32" Text="6"
+					x:Name="keypad6" Clicked="keypad6_Clicked"/>
 
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="3" Grid.Row="2"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="−"
-					x:Name="keypadSubtraction"/>
+					FontSize="32" Text="×"
+					x:Name="keypadMultiplication" Clicked="keypadMultiplication_Clicked"/>
 
-			<!-- 4th row -->
+			<!-- 4rd row -->
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="0" Grid.Row="3"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="."
-					x:Name="keypadDecimal"/>
+					FontSize="32" Text="1"
+					x:Name="keypad1" Clicked="keypad1_Clicked"/>
 
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="1" Grid.Row="3"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="0"
-					x:Name="keypad0"/>
+					FontSize="32" Text="2"
+					x:Name="keypad2" Clicked="keypad2_Clicked"/>
 
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="2" Grid.Row="3"
 					BorderColor="Transparent" BackgroundColor="Transparent"
-					FontSize="32" Text="="
-					x:Name="keypadEquals"/>
+					FontSize="32" Text="3"
+					x:Name="keypad3" Clicked="keypad3_Clicked"/>
 
 			<Button HorizontalOptions="Center" VerticalOptions="Center"
 					HeightRequest="100" WidthRequest="100"
 					Grid.Column="3" Grid.Row="3"
 					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="−"
+					x:Name="keypadSubtraction" Clicked="keypadSubtraction_Clicked"/>
+
+			<!-- 5th row -->
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="0" Grid.Row="4"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="."
+					x:Name="keypadDecimal" Clicked="keypadDecimal_Clicked"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="1" Grid.Row="4"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="0"
+					x:Name="keypad0" Clicked="keypad0_Clicked"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="2" Grid.Row="4"
+					BorderColor="Transparent" BackgroundColor="Transparent"
+					FontSize="32" Text="="
+					x:Name="keypadEquals" Clicked="keypadEquals_Clicked"/>
+
+			<Button HorizontalOptions="Center" VerticalOptions="Center"
+					HeightRequest="100" WidthRequest="100"
+					Grid.Column="3" Grid.Row="4"
+					BorderColor="Transparent" BackgroundColor="Transparent"
 					FontSize="32" Text="+"
-					x:Name="keypadAddition"/>
+					x:Name="keypadAddition" Clicked="keypadAddition_Clicked"/>
 
 		</Grid>
 	</Grid>
